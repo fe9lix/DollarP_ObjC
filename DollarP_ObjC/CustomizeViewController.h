@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface CustomizeViewController : UIViewController
+@interface CustomizeViewController : UITableViewController
 
 @end
