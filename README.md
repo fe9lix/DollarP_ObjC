@@ -1,6 +1,6 @@
 https://github.com/fe9lix/DollarP_ObjC.git# $P Point-Cloud Recognizer for Objective-C
 
-$P is an Objective-C port of the $P gesture recognizer to be used in iOS applications.
+An Objective-C port of the $P gesture recognizer to be used in iOS applications.
 
 ## What is $P?
 From the [$P website](http://depts.washington.edu/aimgroup/proj/dollar/pdollar.html):

@@ -16,6 +16,11 @@
 		DC219738165E7072009CFCF3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC219737165E7072009CFCF3 /* Default.png */; };
 		DC21973A165E7072009CFCF3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC219739165E7072009CFCF3 /* Default@2x.png */; };
 		DC21973C165E7072009CFCF3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21973B165E7072009CFCF3 /* Default-568h@2x.png */; };
+		DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219743165E7C3E009CFCF3 /* TemplatesViewController.m */; };
+		DC21977A165E8073009CFCF3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC219779165E8073009CFCF3 /* MainStoryboard.storyboard */; };
+		DC21977C165E821B009CFCF3 /* multistrokes.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC21977B165E821B009CFCF3 /* multistrokes.gif */; };
+		DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21978E165E9943009CFCF3 /* GestureViewController.m */; };
+		DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,14 @@
 		DC219737165E7072009CFCF3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DC219739165E7072009CFCF3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DC21973B165E7072009CFCF3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DC219742165E7C3E009CFCF3 /* TemplatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatesViewController.h; sourceTree = "<group>"; };
+		DC219743165E7C3E009CFCF3 /* TemplatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplatesViewController.m; sourceTree = "<group>"; };
+		DC219779165E8073009CFCF3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DC21977B165E821B009CFCF3 /* multistrokes.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = multistrokes.gif; path = res/images/multistrokes.gif; sourceTree = "<group>"; };
+		DC21978D165E9943009CFCF3 /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
+		DC21978E165E9943009CFCF3 /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
+		DC219790165E9B1E009CFCF3 /* CustomizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeViewController.h; sourceTree = "<group>"; };
+		DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +93,13 @@
 			children = (
 				DC219734165E7072009CFCF3 /* DollarPAppDelegate.h */,
 				DC219735165E7072009CFCF3 /* DollarPAppDelegate.m */,
+				DC219779165E8073009CFCF3 /* MainStoryboard.storyboard */,
+				DC21978D165E9943009CFCF3 /* GestureViewController.h */,
+				DC21978E165E9943009CFCF3 /* GestureViewController.m */,
+				DC219742165E7C3E009CFCF3 /* TemplatesViewController.h */,
+				DC219743165E7C3E009CFCF3 /* TemplatesViewController.m */,
+				DC219790165E9B1E009CFCF3 /* CustomizeViewController.h */,
+				DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */,
 				DC21972C165E7072009CFCF3 /* Supporting Files */,
 			);
 			path = DollarP_ObjC;
@@ -88,6 +108,7 @@
 		DC21972C165E7072009CFCF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC21977B165E821B009CFCF3 /* multistrokes.gif */,
 				DC21972D165E7072009CFCF3 /* DollarP_ObjC-Info.plist */,
 				DC21972E165E7072009CFCF3 /* InfoPlist.strings */,
 				DC219731165E7072009CFCF3 /* main.m */,
@@ -155,6 +176,8 @@
 				DC219738165E7072009CFCF3 /* Default.png in Resources */,
 				DC21973A165E7072009CFCF3 /* Default@2x.png in Resources */,
 				DC21973C165E7072009CFCF3 /* Default-568h@2x.png in Resources */,
+				DC21977A165E8073009CFCF3 /* MainStoryboard.storyboard in Resources */,
+				DC21977C165E821B009CFCF3 /* multistrokes.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +190,9 @@
 			files = (
 				DC219732165E7072009CFCF3 /* main.m in Sources */,
 				DC219736165E7072009CFCF3 /* DollarPAppDelegate.m in Sources */,
+				DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */,
+				DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */,
+				DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
