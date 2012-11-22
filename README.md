@@ -1,4 +1,4 @@
-https://github.com/fe9lix/DollarP_ObjC.git# $P Point-Cloud Recognizer for Objective-C
+# $P Point-Cloud Recognizer for Objective-C
 
 An Objective-C port of the $P gesture recognizer to be used in iOS applications.
 
