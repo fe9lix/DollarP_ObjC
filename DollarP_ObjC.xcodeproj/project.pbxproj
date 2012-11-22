@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC219726165E7072009CFCF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219725165E7072009CFCF3 /* UIKit.framework */; };
+		DC219728165E7072009CFCF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219727165E7072009CFCF3 /* Foundation.framework */; };
+		DC21972A165E7072009CFCF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC219729165E7072009CFCF3 /* CoreGraphics.framework */; };
+		DC219730165E7072009CFCF3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC21972E165E7072009CFCF3 /* InfoPlist.strings */; };
+		DC219732165E7072009CFCF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219731165E7072009CFCF3 /* main.m */; };
+		DC219736165E7072009CFCF3 /* DollarPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219735165E7072009CFCF3 /* DollarPAppDelegate.m */; };
+		DC219738165E7072009CFCF3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC219737165E7072009CFCF3 /* Default.png */; };
+		DC21973A165E7072009CFCF3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC219739165E7072009CFCF3 /* Default@2x.png */; };
+		DC21973C165E7072009CFCF3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21973B165E7072009CFCF3 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC219721165E7072009CFCF3 /* DollarP_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DollarP_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC219725165E7072009CFCF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC219727165E7072009CFCF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC219729165E7072009CFCF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC21972D165E7072009CFCF3 /* DollarP_ObjC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DollarP_ObjC-Info.plist"; sourceTree = "<group>"; };
+		DC21972F165E7072009CFCF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC219731165E7072009CFCF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC219733165E7072009CFCF3 /* DollarP_ObjC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DollarP_ObjC-Prefix.pch"; sourceTree = "<group>"; };
+		DC219734165E7072009CFCF3 /* DollarPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DollarPAppDelegate.h; sourceTree = "<group>"; };
+		DC219735165E7072009CFCF3 /* DollarPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarPAppDelegate.m; sourceTree = "<group>"; };
+		DC219737165E7072009CFCF3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DC219739165E7072009CFCF3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DC21973B165E7072009CFCF3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC21971E165E7072009CFCF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC219726165E7072009CFCF3 /* UIKit.framework in Frameworks */,
+				DC219728165E7072009CFCF3 /* Foundation.framework in Frameworks */,
+				DC21972A165E7072009CFCF3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC219716165E7072009CFCF3 = {
+			isa = PBXGroup;
+			children = (
+				DC21972B165E7072009CFCF3 /* DollarP_ObjC */,
+				DC219724165E7072009CFCF3 /* Frameworks */,
+				DC219722165E7072009CFCF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC219722165E7072009CFCF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC219721165E7072009CFCF3 /* DollarP_ObjC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC219724165E7072009CFCF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC219725165E7072009CFCF3 /* UIKit.framework */,
+				DC219727165E7072009CFCF3 /* Foundation.framework */,
+				DC219729165E7072009CFCF3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC21972B165E7072009CFCF3 /* DollarP_ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				DC219734165E7072009CFCF3 /* DollarPAppDelegate.h */,
+				DC219735165E7072009CFCF3 /* DollarPAppDelegate.m */,
+				DC21972C165E7072009CFCF3 /* Supporting Files */,
+			);
+			path = DollarP_ObjC;
+			sourceTree = "<group>";
+		};
+		DC21972C165E7072009CFCF3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC21972D165E7072009CFCF3 /* DollarP_ObjC-Info.plist */,
+				DC21972E165E7072009CFCF3 /* InfoPlist.strings */,
+				DC219731165E7072009CFCF3 /* main.m */,
+				DC219733165E7072009CFCF3 /* DollarP_ObjC-Prefix.pch */,
+				DC219737165E7072009CFCF3 /* Default.png */,
+				DC219739165E7072009CFCF3 /* Default@2x.png */,
+				DC21973B165E7072009CFCF3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC219720165E7072009CFCF3 /* DollarP_ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "DollarP_ObjC" */;
+			buildPhases = (
+				DC21971D165E7072009CFCF3 /* Sources */,
+				DC21971E165E7072009CFCF3 /* Frameworks */,
+				DC21971F165E7072009CFCF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DollarP_ObjC;
+			productName = DollarP_ObjC;
+			productReference = DC219721165E7072009CFCF3 /* DollarP_ObjC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC219718165E7072009CFCF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DollarP;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = de.ur;
+			};
+			buildConfigurationList = DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "DollarP_ObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC219716165E7072009CFCF3;
+			productRefGroup = DC219722165E7072009CFCF3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC219720165E7072009CFCF3 /* DollarP_ObjC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC21971F165E7072009CFCF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC219730165E7072009CFCF3 /* InfoPlist.strings in Resources */,
+				DC219738165E7072009CFCF3 /* Default.png in Resources */,
+				DC21973A165E7072009CFCF3 /* Default@2x.png in Resources */,
+				DC21973C165E7072009CFCF3 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC21971D165E7072009CFCF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC219732165E7072009CFCF3 /* main.m in Sources */,
+				DC219736165E7072009CFCF3 /* DollarPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC21972E165E7072009CFCF3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC21972F165E7072009CFCF3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC21973D165E7072009CFCF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC21973E165E7072009CFCF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC219740165E7072009CFCF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP_ObjC/DollarP_ObjC-Prefix.pch";
+				INFOPLIST_FILE = "DollarP_ObjC/DollarP_ObjC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC219741165E7072009CFCF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DollarP_ObjC/DollarP_ObjC-Prefix.pch";
+				INFOPLIST_FILE = "DollarP_ObjC/DollarP_ObjC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC21971B165E7072009CFCF3 /* Build configuration list for PBXProject "DollarP_ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC21973D165E7072009CFCF3 /* Debug */,
+				DC21973E165E7072009CFCF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC21973F165E7072009CFCF3 /* Build configuration list for PBXNativeTarget "DollarP_ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC219740165E7072009CFCF3 /* Debug */,
+				DC219741165E7072009CFCF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC219718165E7072009CFCF3 /* Project object */;
+}
