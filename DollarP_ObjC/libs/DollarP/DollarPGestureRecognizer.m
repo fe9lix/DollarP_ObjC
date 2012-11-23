@@ -63,6 +63,11 @@
 }
 
 - (void)recognize {
+    if ([currentPoints count] == 0) {
+        [self setState:UIGestureRecognizerStateFailed];
+        return;
+    }
+    
     points = [currentPoints copy];
     
     if ([self state] == UIGestureRecognizerStatePossible) {

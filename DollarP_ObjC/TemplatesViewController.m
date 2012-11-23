@@ -15,4 +15,9 @@
     return imageView;
 }
 
+- (IBAction)gotoWebsite:(id)sender {
+    NSURL *url = [[NSURL alloc] initWithString:@"http://depts.washington.edu/aimgroup/proj/dollar/pdollar.html"];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
 @end

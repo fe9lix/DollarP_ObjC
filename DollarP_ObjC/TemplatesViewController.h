@@ -5,4 +5,6 @@
     __weak IBOutlet UIScrollView *scrollView;
 }
 
+- (IBAction)gotoWebsite:(id)sender;
+
 @end

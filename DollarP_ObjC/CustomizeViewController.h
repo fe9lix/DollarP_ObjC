@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "DollarPGestureRecognizer.h"
 
-@interface CustomizeViewController : UITableViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface CustomizeViewController : UITableViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate> {
     __weak IBOutlet UIPickerView *existingTypesPicker;
     __weak IBOutlet UITextField *customTypeField;
 }

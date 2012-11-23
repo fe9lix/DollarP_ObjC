@@ -17,8 +17,14 @@
 }
 
 - (IBAction)recognize:(id)sender {
-    [dollarPGestureRecognizer recognize];
-    [gestureView clearAll];
+    if (recognized) {
+        [recognizeButton setTitle:@"Recognize"];
+        [gestureView clearAll];
+    } else {
+        [dollarPGestureRecognizer recognize];
+        [recognizeButton setTitle:@"Clear"];
+    }
+    recognized =  !recognized;
 }
 
 - (void)gestureRecognized:(DollarPGestureRecognizer *)sender {

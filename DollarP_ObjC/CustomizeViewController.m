@@ -19,6 +19,8 @@
     [existingTypesPicker setDelegate:self];
     [existingTypesPicker setDataSource:self];
     [existingTypesPicker selectRow:[self selectedTypeIndex] inComponent:0 animated:YES];
+    
+    [customTypeField setDelegate:self];
 }
 
 - (NSInteger)selectedTypeIndex {
@@ -83,6 +85,11 @@ numberOfRowsInComponent:(NSInteger)component {
     [existingTypesPicker reloadAllComponents];
     
     [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 - (IBAction)deleteAllCustomTypes:(id)sender {
