@@ -21,6 +21,13 @@
 		DC21977C165E821B009CFCF3 /* multistrokes.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC21977B165E821B009CFCF3 /* multistrokes.gif */; };
 		DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21978E165E9943009CFCF3 /* GestureViewController.m */; };
 		DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */; };
+		DC21979A165EA5AF009CFCF3 /* DollarP.m in Sources */ = {isa = PBXBuildFile; fileRef = DC219799165EA5AF009CFCF3 /* DollarP.m */; };
+		DC21979F165EA66C009CFCF3 /* DollarPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC21979E165EA66C009CFCF3 /* DollarPoint.m */; };
+		DC2197A2165EA8D2009CFCF3 /* DollarPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A1165EA8D2009CFCF3 /* DollarPointCloud.m */; };
+		DC2197A5165EAA20009CFCF3 /* DollarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A4165EAA1F009CFCF3 /* DollarResult.m */; };
+		DC2197A8165F650C009CFCF3 /* DollarDefaultGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A7165F650C009CFCF3 /* DollarDefaultGestures.m */; };
+		DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197AA165F8CE9009CFCF3 /* GestureView.m */; };
+		DC2197B2165F97C6009CFCF3 /* DollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197B1165F97C5009CFCF3 /* DollarPGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +52,20 @@
 		DC21978E165E9943009CFCF3 /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
 		DC219790165E9B1E009CFCF3 /* CustomizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeViewController.h; sourceTree = "<group>"; };
 		DC219791165E9B1E009CFCF3 /* CustomizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeViewController.m; sourceTree = "<group>"; };
+		DC219798165EA5AF009CFCF3 /* DollarP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarP.h; path = DollarP_ObjC/libs/DollarP/DollarP.h; sourceTree = "<group>"; };
+		DC219799165EA5AF009CFCF3 /* DollarP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarP.m; path = DollarP_ObjC/libs/DollarP/DollarP.m; sourceTree = "<group>"; };
+		DC21979D165EA66C009CFCF3 /* DollarPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarPoint.h; path = DollarP_ObjC/libs/DollarP/DollarPoint.h; sourceTree = "<group>"; };
+		DC21979E165EA66C009CFCF3 /* DollarPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarPoint.m; path = DollarP_ObjC/libs/DollarP/DollarPoint.m; sourceTree = "<group>"; };
+		DC2197A0165EA8D2009CFCF3 /* DollarPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarPointCloud.h; path = DollarP_ObjC/libs/DollarP/DollarPointCloud.h; sourceTree = "<group>"; };
+		DC2197A1165EA8D2009CFCF3 /* DollarPointCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarPointCloud.m; path = DollarP_ObjC/libs/DollarP/DollarPointCloud.m; sourceTree = "<group>"; };
+		DC2197A3165EAA1F009CFCF3 /* DollarResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarResult.h; path = DollarP_ObjC/libs/DollarP/DollarResult.h; sourceTree = "<group>"; };
+		DC2197A4165EAA1F009CFCF3 /* DollarResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarResult.m; path = DollarP_ObjC/libs/DollarP/DollarResult.m; sourceTree = "<group>"; };
+		DC2197A6165F650B009CFCF3 /* DollarDefaultGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarDefaultGestures.h; path = DollarP_ObjC/libs/DollarP/DollarDefaultGestures.h; sourceTree = "<group>"; };
+		DC2197A7165F650C009CFCF3 /* DollarDefaultGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarDefaultGestures.m; path = DollarP_ObjC/libs/DollarP/DollarDefaultGestures.m; sourceTree = "<group>"; };
+		DC2197A9165F8CE8009CFCF3 /* GestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureView.h; sourceTree = "<group>"; };
+		DC2197AA165F8CE9009CFCF3 /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
+		DC2197B0165F97C5009CFCF3 /* DollarPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarPGestureRecognizer.h; path = DollarP_ObjC/libs/DollarP/DollarPGestureRecognizer.h; sourceTree = "<group>"; };
+		DC2197B1165F97C5009CFCF3 /* DollarPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarPGestureRecognizer.m; path = DollarP_ObjC/libs/DollarP/DollarPGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +112,14 @@
 		DC21972B165E7072009CFCF3 /* DollarP_ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				DC21979B165EA5C3009CFCF3 /* libs */,
 				DC219734165E7072009CFCF3 /* DollarPAppDelegate.h */,
 				DC219735165E7072009CFCF3 /* DollarPAppDelegate.m */,
 				DC219779165E8073009CFCF3 /* MainStoryboard.storyboard */,
 				DC21978D165E9943009CFCF3 /* GestureViewController.h */,
 				DC21978E165E9943009CFCF3 /* GestureViewController.m */,
+				DC2197A9165F8CE8009CFCF3 /* GestureView.h */,
+				DC2197AA165F8CE9009CFCF3 /* GestureView.m */,
 				DC219742165E7C3E009CFCF3 /* TemplatesViewController.h */,
 				DC219743165E7C3E009CFCF3 /* TemplatesViewController.m */,
 				DC219790165E9B1E009CFCF3 /* CustomizeViewController.h */,
@@ -118,6 +142,34 @@
 				DC21973B165E7072009CFCF3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC21979B165EA5C3009CFCF3 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				DC21979C165EA5CB009CFCF3 /* DollarP */,
+			);
+			name = libs;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		DC21979C165EA5CB009CFCF3 /* DollarP */ = {
+			isa = PBXGroup;
+			children = (
+				DC219798165EA5AF009CFCF3 /* DollarP.h */,
+				DC219799165EA5AF009CFCF3 /* DollarP.m */,
+				DC2197B0165F97C5009CFCF3 /* DollarPGestureRecognizer.h */,
+				DC2197B1165F97C5009CFCF3 /* DollarPGestureRecognizer.m */,
+				DC2197A6165F650B009CFCF3 /* DollarDefaultGestures.h */,
+				DC2197A7165F650C009CFCF3 /* DollarDefaultGestures.m */,
+				DC21979D165EA66C009CFCF3 /* DollarPoint.h */,
+				DC21979E165EA66C009CFCF3 /* DollarPoint.m */,
+				DC2197A0165EA8D2009CFCF3 /* DollarPointCloud.h */,
+				DC2197A1165EA8D2009CFCF3 /* DollarPointCloud.m */,
+				DC2197A3165EAA1F009CFCF3 /* DollarResult.h */,
+				DC2197A4165EAA1F009CFCF3 /* DollarResult.m */,
+			);
+			name = DollarP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +245,13 @@
 				DC219745165E7C3E009CFCF3 /* TemplatesViewController.m in Sources */,
 				DC21978F165E9943009CFCF3 /* GestureViewController.m in Sources */,
 				DC219792165E9B1E009CFCF3 /* CustomizeViewController.m in Sources */,
+				DC21979A165EA5AF009CFCF3 /* DollarP.m in Sources */,
+				DC21979F165EA66C009CFCF3 /* DollarPoint.m in Sources */,
+				DC2197A2165EA8D2009CFCF3 /* DollarPointCloud.m in Sources */,
+				DC2197A5165EAA20009CFCF3 /* DollarResult.m in Sources */,
+				DC2197A8165F650C009CFCF3 /* DollarDefaultGestures.m in Sources */,
+				DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */,
+				DC2197B2165F97C6009CFCF3 /* DollarPGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

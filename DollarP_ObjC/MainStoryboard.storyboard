@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="2" id="8lQ-td-gqE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="23" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="TopLeft" image="multistrokes.gif" id="QJ8-2s-yzb">
@@ -57,14 +57,23 @@
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aGu-qV-RrZ"/>
-                                    <barButtonItem title="Recognize" id="Srh-NT-fyf"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wQX-dt-zMz"/>
+                                    <barButtonItem title="Recognize" id="VS3-cy-tYU">
+                                        <connections>
+                                            <action selector="recognize:" destination="9eT-m9-U6V" id="TOa-ZU-MfJ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Result:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gnf-2J-IH5">
-                                <rect key="frame" x="5" y="472" width="222" height="21"/>
+                            <view contentMode="scaleToFill" id="FIp-Gf-dHd" customClass="GestureView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Result:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gnf-2J-IH5">
+                                <rect key="frame" x="5" y="472" width="226" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -75,21 +84,26 @@
                     <navigationItem key="navigationItem" title="Gesture!" id="ars-DC-nSL">
                         <barButtonItem key="rightBarButtonItem" title="Customize" id="ewr-wP-1Ur">
                             <connections>
-                                <segue destination="qmR-XR-EHE" kind="push" id="H6C-nI-gXt"/>
+                                <segue destination="qmR-XR-EHE" kind="push" identifier="CustomizeViewController" id="H6C-nI-gXt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="gestureView" destination="FIp-Gf-dHd" id="PE8-Wl-jld"/>
+                        <outlet property="resultLabel" destination="gnf-2J-IH5" id="N5y-gN-Kb2"/>
+                        <outlet property="toolbar" destination="j1x-2H-yNu" id="Ask-ga-Nze"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prk-jH-I1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1693" y="33"/>
         </scene>
-        <!--Table View Controller - Customize-->
+        <!--Customize View Controller - Customize-->
         <scene sceneID="Kd7-C7-ed2">
             <objects>
-                <tableViewController id="qmR-XR-EHE" sceneMemberID="viewController">
+                <tableViewController id="qmR-XR-EHE" customClass="CustomizeViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aA3-OD-xs4">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +133,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addToExistingType:" destination="qmR-XR-EHE" eventType="touchUpInside" id="BKg-rZ-zKz"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -152,6 +169,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addToCustomType:" destination="qmR-XR-EHE" eventType="touchUpInside" id="tAV-xy-Pmm"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -179,6 +199,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteAllCustomTypes:" destination="qmR-XR-EHE" eventType="touchUpInside" id="Tsq-jO-NTu"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -193,6 +216,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Customize" id="4Gq-Km-ZGj"/>
+                    <connections>
+                        <outlet property="customTypeField" destination="PjL-pQ-p3U" id="dkS-EK-qEi"/>
+                        <outlet property="existingTypesPicker" destination="0xf-qV-ssu" id="9hs-Nj-7P5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40G-gG-HpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,8 +252,27 @@
         <image name="multistrokes.gif" width="449" height="455"/>
     </resources>
     <classes>
+        <class className="CustomizeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomizeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addToCustomType:"/>
+                <relationship kind="action" name="addToExistingType:"/>
+                <relationship kind="action" name="deleteAllCustomTypes:"/>
+                <relationship kind="outlet" name="customTypeField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="existingTypesPicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="GestureView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GestureView.h"/>
+        </class>
         <class className="GestureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GestureViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="recognize:"/>
+                <relationship kind="outlet" name="gestureView" candidateClass="GestureView"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
         </class>
         <class className="TemplatesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TemplatesViewController.h"/>
