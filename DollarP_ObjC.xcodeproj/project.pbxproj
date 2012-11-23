@@ -28,6 +28,8 @@
 		DC2197A8165F650C009CFCF3 /* DollarDefaultGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197A7165F650C009CFCF3 /* DollarDefaultGestures.m */; };
 		DC2197AB165F8CE9009CFCF3 /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197AA165F8CE9009CFCF3 /* GestureView.m */; };
 		DC2197B2165F97C6009CFCF3 /* DollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2197B1165F97C5009CFCF3 /* DollarPGestureRecognizer.m */; };
+		DC4B79EB165FED0900A3BF09 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4B79E9165FED0900A3BF09 /* app-icon.png */; };
+		DC4B79EC165FED0900A3BF09 /* app-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		DC2197AA165F8CE9009CFCF3 /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
 		DC2197B0165F97C5009CFCF3 /* DollarPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DollarPGestureRecognizer.h; path = DollarP_ObjC/libs/DollarP/DollarPGestureRecognizer.h; sourceTree = "<group>"; };
 		DC2197B1165F97C5009CFCF3 /* DollarPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DollarPGestureRecognizer.m; path = DollarP_ObjC/libs/DollarP/DollarPGestureRecognizer.m; sourceTree = "<group>"; };
+		DC4B79E9165FED0900A3BF09 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "res/images/app-icon.png"; sourceTree = "<group>"; };
+		DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon@2x.png"; path = "res/images/app-icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 		DC21972C165E7072009CFCF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC4B79E9165FED0900A3BF09 /* app-icon.png */,
+				DC4B79EA165FED0900A3BF09 /* app-icon@2x.png */,
 				DC21977B165E821B009CFCF3 /* multistrokes.gif */,
 				DC21972D165E7072009CFCF3 /* DollarP_ObjC-Info.plist */,
 				DC21972E165E7072009CFCF3 /* InfoPlist.strings */,
@@ -230,6 +236,8 @@
 				DC21973C165E7072009CFCF3 /* Default-568h@2x.png in Resources */,
 				DC21977A165E8073009CFCF3 /* MainStoryboard.storyboard in Resources */,
 				DC21977C165E821B009CFCF3 /* multistrokes.gif in Resources */,
+				DC4B79EB165FED0900A3BF09 /* app-icon.png in Resources */,
+				DC4B79EC165FED0900A3BF09 /* app-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +368,7 @@
 				DC219741165E7072009CFCF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
