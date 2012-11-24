@@ -5,29 +5,36 @@
 
 @synthesize gestureRecognizer;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self updatePointCloudNames];
+    
     [existingTypesPicker setDelegate:self];
     [existingTypesPicker setDataSource:self];
-    [existingTypesPicker selectRow:[self selectedTypeIndex] inComponent:0 animated:YES];
+    [existingTypesPicker selectRow:[self selectedTypeIndex]
+                       inComponent:0
+                          animated:YES];
     
     [customTypeField setDelegate:self];
 }
 
-- (NSInteger)selectedTypeIndex {
-    NSArray *pointClouds = [gestureRecognizer pointClouds];
+- (void)updatePointCloudNames {
+    pointCloudNames = [NSMutableArray array];
+    pointCloudCount = [[NSCountedSet alloc] init];
     
-    NSUInteger index = [pointClouds indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return [[obj name] isEqualToString:[[gestureRecognizer result] name]];
+    for (id pointCloud in [gestureRecognizer pointClouds]) {
+        if (![pointCloudNames containsObject:[pointCloud name]]) {
+            [pointCloudNames addObject:[pointCloud name]];
+        }
+        [pointCloudCount addObject:[pointCloud name]];
+    }
+}
+
+- (NSInteger)selectedTypeIndex {    
+    NSUInteger index = [pointCloudNames indexOfObjectPassingTest:
+    ^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [obj isEqualToString:[[gestureRecognizer result] name]];
     }];
     if (index != NSNotFound) {
         return index;
@@ -37,7 +44,7 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component {
-    return [[gestureRecognizer pointClouds] count];
+    return [pointCloudNames count];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -56,7 +63,9 @@ numberOfRowsInComponent:(NSInteger)component {
         labelView = [[UILabel alloc] init];
     }
     
-    NSString *label = [[[gestureRecognizer pointClouds] objectAtIndex:row] name];
+    NSString *label = [pointCloudNames objectAtIndex:row];
+    label = [label stringByAppendingString:[NSString stringWithFormat:@" (%d)",
+                                    [pointCloudCount countForObject:label]]];
     
     [labelView setText:label];
     [labelView setBackgroundColor:[UIColor clearColor]];
@@ -67,9 +76,9 @@ numberOfRowsInComponent:(NSInteger)component {
 
 - (IBAction)addToExistingType:(id)sender {
     NSInteger selectedRowIndex = [existingTypesPicker selectedRowInComponent:0];
-    UILabel *selectedLabel = (UILabel *)[existingTypesPicker viewForRow:selectedRowIndex forComponent:0];
+    NSString *selectedName = [pointCloudNames objectAtIndex:selectedRowIndex];
     
-    [gestureRecognizer addGestureWithName:[selectedLabel text]];
+    [self addGesture:selectedName];
     
     [[self navigationController] popViewControllerAnimated:YES];
 }
@@ -80,8 +89,20 @@ numberOfRowsInComponent:(NSInteger)component {
         return;
     }
     
-    [gestureRecognizer addGestureWithName:customType];
+    [self addGesture:customType];
     
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (void)addGesture:(NSString *)name {
+    [gestureRecognizer addGestureWithName:name];
+    [self updatePointCloudNames];
+    [existingTypesPicker reloadAllComponents];
+}
+
+- (IBAction)deleteAllCustomTypes:(id)sender {
+    [gestureRecognizer setPointClouds:[DollarDefaultGestures defaultPointClouds]];
+    [self updatePointCloudNames];
     [existingTypesPicker reloadAllComponents];
     
     [[self navigationController] popViewControllerAnimated:YES];
@@ -90,14 +111,6 @@ numberOfRowsInComponent:(NSInteger)component {
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
-}
-
-- (IBAction)deleteAllCustomTypes:(id)sender {
-    [gestureRecognizer setPointClouds:[DollarDefaultGestures defaultPointClouds]];
-    
-    [existingTypesPicker reloadAllComponents];
-    
-    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

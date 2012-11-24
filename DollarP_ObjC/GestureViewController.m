@@ -18,13 +18,16 @@
 
 - (IBAction)recognize:(id)sender {
     if (recognized) {
-        [recognizeButton setTitle:@"Recognize"];
         [gestureView clearAll];
+        [resultLabel setText:@"Draw..."];
     } else {
         [dollarPGestureRecognizer recognize];
-        [recognizeButton setTitle:@"Clear"];
     }
-    recognized =  !recognized;
+    
+    recognized = !recognized;
+    
+    [recognizeButton setTitle:recognized ? @"Clear" : @"Recognize"];
+    [gestureView setUserInteractionEnabled:!recognized];
 }
 
 - (void)gestureRecognized:(DollarPGestureRecognizer *)sender {

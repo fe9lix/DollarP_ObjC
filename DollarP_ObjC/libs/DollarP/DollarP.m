@@ -10,12 +10,20 @@ int const DollarPNumPoints = 32;
 - (id)init {
     self = [super init];
     if (self) {
-        [self setPointClouds:[NSMutableArray array]];
+        pointClouds = [NSMutableArray array];
     }
     return self;
 }
 
 - (DollarResult *)recognize:(NSArray *)points {
+    DollarResult *result = [[DollarResult alloc] init];
+    [result setName:@"No match"];
+    [result setScore:0.0];
+    
+    if ([points count] == 0) {
+        return result;
+    }
+    
     points = [[self class] resample:points numPoints:DollarPNumPoints];
     points = [[self class] scale:points];
     points = [[self class] translate:points to:[DollarPoint origin]];
@@ -24,21 +32,19 @@ int const DollarPNumPoints = 32;
     int u = -1;
     
     for (int i = 0; i < [[self pointClouds] count]; i++) {
-        float d = [[self class] greedyCloudMatch:points template:[[self pointClouds][i] points]];
+        float d = [[self class] greedyCloudMatch:points
+                                        template:[[self pointClouds][i] points]];
         if (d < b) {
             b = d;
             u = i;
         }
     }
     
-    DollarResult *result = [[DollarResult alloc] init];
-    if (u == -1) {
-        [result setName:@"No match"];
-        [result setScore:0.0];
-    } else {
+    if (u != -1) {
         [result setName:[[self pointClouds][u] name]];
         [result setScore:MAX((b - 2.0f) / -2.0f, 0.0f)];
     }
+    
     return result;
 }
 
@@ -106,9 +112,10 @@ int const DollarPNumPoints = 32;
 }
 
 + (NSArray *)resample:(NSArray *)points
-            numPoints:(int)n {
-    float I = [self pathLength:points] / (n - 1);
+            numPoints:(int)numPoints {
+    float I = [self pathLength:points] / (numPoints - 1);
 	float D = 0.0f;
+    
     NSMutableArray *thePoints = [points mutableCopy];
 	NSMutableArray *newPoints = [NSMutableArray arrayWithObject:thePoints[0]];
 
@@ -134,7 +141,7 @@ int const DollarPNumPoints = 32;
 		}
 	}
     
-	if ([newPoints count] == n - 1) {
+	if ([newPoints count] == numPoints - 1) {
         DollarPoint *lastPoint = thePoints[[thePoints count] - 1];        
 		[newPoints addObject:[lastPoint copy]];
     }

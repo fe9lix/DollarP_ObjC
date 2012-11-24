@@ -8,7 +8,7 @@ extern int const DollarPNumPoints;
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;
 
-+ (NSArray *)resample:(NSArray *)points numPoints:(int)n;
++ (NSArray *)resample:(NSArray *)points numPoints:(int)numPoints;
 + (NSArray *)scale:(NSArray *)points;
 + (NSArray *)translate:(NSArray *)points to:(DollarPoint *)point;
 
