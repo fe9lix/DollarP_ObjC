@@ -77,8 +77,11 @@ int const DollarPNumPoints = 32;
 + (float)cloudDistanceFrom:(NSArray *)points1
                         to:(NSArray *)points2
                      start:(int)start {
-    NSMutableArray *matched = [NSMutableArray arrayWithCapacity:[points1 count]];
-	for (int k = 0; k < [points1 count]; k++) {
+    int numPoints1 = [points1 count];
+    int numPoints2 = [points2 count];
+    
+    NSMutableArray *matched = [NSMutableArray arrayWithCapacity:numPoints1];
+	for (int k = 0; k < numPoints1; k++) {
 		matched[k] = @NO;
     }
     
@@ -91,20 +94,23 @@ int const DollarPNumPoints = 32;
         
 		for (int j = 0; j < [matched count]; j++) {
 			if (![matched[j] boolValue]) {
-				float d = [self distanceFrom:points1[i] to:points2[j]];
-				if (d < min) {
-					min = d;
-					index = j;
-				}
+                if (i < numPoints1 && j < numPoints2) {
+                    float d = [self distanceFrom:points1[i] to:points2[j]];
+                    if (d < min) {
+                        min = d;
+                        index = j;
+                    }
+                }
 			}
 		}
 
         if (index > -1) {
             matched[index] = @YES;
         }
-		float weight = 1 - ((i - start + [points1 count]) % [points1 count]) / [points1 count];
+        
+		float weight = 1 - ((i - start + numPoints1) % numPoints1) / numPoints1;
 		sum += weight * min;
-		i = (i + 1) % [points1 count];
+		i = (i + 1) % numPoints1;
         
 	} while (i != start);
     

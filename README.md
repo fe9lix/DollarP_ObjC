@@ -11,6 +11,4 @@ From the [$P website](http://depts.washington.edu/aimgroup/proj/dollar/pdollar.h
 ...TODO
 
 ## TODO
-* Fix default templates (currently resulting in 0.0 score)
 * Persist custom templates
-* Polish UI
