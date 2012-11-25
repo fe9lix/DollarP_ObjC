@@ -148,7 +148,7 @@ int const DollarPNumPoints = 32;
 	}
     
 	if ([newPoints count] == numPoints - 1) {
-        DollarPoint *lastPoint = thePoints[[thePoints count] - 1];        
+        DollarPoint *lastPoint = thePoints[[thePoints count] - 1];
 		[newPoints addObject:[lastPoint copy]];
     }
     
@@ -183,6 +183,7 @@ int const DollarPNumPoints = 32;
         
         [newPoints addObject:q];
 	}
+    
 	return newPoints;
 }
 

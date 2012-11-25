@@ -1,5 +1,20 @@
 #import "GestureView.h"
 
+@interface Stroke : NSObject
+
+@property (nonatomic, strong) NSMutableArray *points;
+@property (nonatomic, strong) UIColor *color;
+
+@end
+
+
+@implementation Stroke
+
+@synthesize points, color;
+
+@end
+
+
 @implementation GestureView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -17,7 +32,7 @@
 
 - (void)setup {
     currentTouches = [[NSMutableDictionary alloc] init];
-    completePoints = [NSMutableArray array];
+    completeStrokes = [NSMutableArray array];
 
     [self setBackgroundColor:[UIColor whiteColor]];
     [self setMultipleTouchEnabled:YES];
@@ -29,9 +44,13 @@
     for (UITouch *touch in touches) {        
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
         CGPoint location = [touch locationInView:self];
-        NSMutableArray *points = [NSMutableArray arrayWithObject:
-                                  [NSValue valueWithCGPoint:location]];
-        [currentTouches setObject:points forKey:key];
+        
+        Stroke *stroke = [[Stroke alloc] init];
+        [stroke setPoints:[NSMutableArray arrayWithObject:
+                                  [NSValue valueWithCGPoint:location]]];
+        [stroke setColor:[UIColor blackColor]];
+        
+        [currentTouches setObject:stroke forKey:key];
     }
 }
 
@@ -40,7 +59,7 @@
     
     for (UITouch *touch in touches) {
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        NSMutableArray *points = [currentTouches objectForKey:key];
+        NSMutableArray *points = [[currentTouches objectForKey:key] points];
         CGPoint location = [touch locationInView:self];
         [points addObject:[NSValue valueWithCGPoint:location]];
     }
@@ -63,10 +82,11 @@
 - (void)endTouches:(NSSet *)touches {
     for (UITouch *touch in touches) {
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        NSMutableArray *points = [currentTouches objectForKey:key];
+        Stroke *stroke = [currentTouches objectForKey:key];
+        [stroke setColor:[self randomColor]];
         
-        if (points) {
-            [completePoints addObject:points];
+        if (stroke) {
+            [completeStrokes addObject:stroke];
             [currentTouches removeObjectForKey:key];
         }
     }
@@ -76,26 +96,28 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, 10.0);
+    CGContextSetLineWidth(context, 5.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     
-    for (int i = 0; i < [completePoints count]; i++) {
-        NSMutableArray *points = [completePoints objectAtIndex:i];
-        [self drawPoints:points withColor:[UIColor blackColor] inContext:context];
+    for (int i = 0; i < [completeStrokes count]; i++) {
+        Stroke *stroke = [completeStrokes objectAtIndex:i];
+        [self drawStroke:stroke inContext:context];
     }
     
     for (NSValue *touchValue in currentTouches) {
-        NSMutableArray *points = [currentTouches objectForKey:touchValue];
-        [self drawPoints:points withColor:[UIColor blueColor] inContext:context];
+        Stroke *stroke = [currentTouches objectForKey:touchValue];
+        [self drawStroke:stroke inContext:context];
     }
 }
 
-- (void)drawPoints:(NSMutableArray *)points
-         withColor:(UIColor *)color
+- (void)drawStroke:(Stroke *)stroke
          inContext:(CGContextRef)context {
-    [color set];
+    [[stroke color] set];
     
+    NSMutableArray *points = [stroke points];
     CGPoint point = [points[0] CGPointValue];
+    
+    CGContextFillRect(context, CGRectMake(point.x - 5, point.y - 5, 10, 10));
     
     CGContextMoveToPoint(context, point.x, point.y);
     for (int i = 1; i < [points count]; i++) {
@@ -105,8 +127,15 @@
     CGContextStrokePath(context);
 }
 
+- (UIColor *)randomColor {
+    CGFloat hue = (arc4random() % 256 / 256.0);
+    CGFloat saturation = (arc4random() % 128 / 256.0) + 0.5; 
+    CGFloat brightness = (arc4random() % 128 / 256.0) + 0.5;
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+
 - (void)clearAll {
-    [completePoints removeAllObjects];
+    [completeStrokes removeAllObjects];
     [currentTouches removeAllObjects];
     
     [self setNeedsDisplay];

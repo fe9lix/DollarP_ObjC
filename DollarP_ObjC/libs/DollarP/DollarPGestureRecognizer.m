@@ -20,16 +20,16 @@
     [super reset];
     [currentTouches removeAllObjects];
     [currentPoints removeAllObjects];
+    strokeId = 0;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
-    int index = 0;
     for (UITouch *touch in touches) {
+        strokeId++;
         NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        [currentTouches setObject:[NSNumber numberWithInt:index] forKey:key];
-        index++;
+        [currentTouches setObject:[NSNumber numberWithInt:strokeId] forKey:key];
     }
 }
 

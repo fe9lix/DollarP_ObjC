@@ -7,6 +7,7 @@
     NSMutableDictionary *currentTouches;
     NSMutableArray *currentPoints;
     NSMutableArray *points;
+    int strokeId;
 }
 
 @property (nonatomic, strong) NSMutableArray *pointClouds;

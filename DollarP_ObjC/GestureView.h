@@ -2,7 +2,7 @@
 
 @interface GestureView : UIView {
     NSMutableDictionary *currentTouches;
-    NSMutableArray *completePoints;
+    NSMutableArray *completeStrokes;
 }
 
 - (void)clearAll;
