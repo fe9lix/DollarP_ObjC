@@ -2,7 +2,7 @@
 
 An Objective-C port of the $P gesture recognizer to be used in iOS applications.
 
-![Demo App](http://fe9lix.github.com/DollarP_ObjC/images/dollarp-objc-demo-app.png)
+![Demo App](https://raw.github.com/fe9lix/DollarP_ObjC/gh-pages-data/images/dollarp-objc-demo-app.png)
 
 ## What is $P?
 From the [$P website](http://depts.washington.edu/aimgroup/proj/dollar/pdollar.html):
