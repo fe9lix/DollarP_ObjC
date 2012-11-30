@@ -46,14 +46,73 @@
 
 <h2>How to use</h2>
 
-<ul>
-<li>All gesture recognizer classes are located in libs/DollarP. Just drag this folder into your Xcode project.</li>
-<li>See the code of the demo app on how to use the recognizer. GestureViewController is the class where the recognizer is added to the view...</li>
-</ul><h2>Notes</h2>
+<p>All gesture recognizer files are located in <code>libs/DollarP</code>. Just drag this folder into your Xcode project. See the code of the demo app on how to use the recognizer. 
+<code>GestureViewController.m</code> is the implementation file where a new recognizer is added to the view:</p>
+
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+
+    <span class="n">dollarPGestureRecognizer</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DollarPGestureRecognizer</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithTarget:</span><span class="n">self</span>
+                                                                       <span class="nl">action:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">gestureRecognized:</span><span class="p">)];</span>
+
+    <span class="p">[</span><span class="n">gestureView</span> <span class="nl">addGestureRecognizer:</span><span class="n">dollarPGestureRecognizer</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>If you want to add the default templates:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">dollarPGestureRecognizer</span> <span class="nl">setPointClouds:</span><span class="p">[</span><span class="n">DollarDefaultGestures</span> <span class="n">defaultPointClouds</span><span class="p">]];</span>
+</pre></div>
+
+<p>When a gesture is recognized, a <code>DollarPResult</code> object contains the name and score of the gesture:</p>
+
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">gestureRecognized:</span><span class="p">(</span><span class="n">DollarPGestureRecognizer</span> <span class="o">*</span><span class="p">)</span><span class="nv">sender</span> <span class="p">{</span>
+    <span class="n">DollarResult</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">sender</span> <span class="n">result</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">resultLabel</span> <span class="nl">setText:</span><span class="p">[</span><span class="n">NSString</span> <span class="nl">stringWithFormat:</span><span class="s">@"Result: %@ (Score: %.2f)"</span><span class="p">,</span>
+                          <span class="p">[</span><span class="n">result</span> <span class="n">name</span><span class="p">],</span> <span class="p">[</span><span class="n">result</span> <span class="n">score</span><span class="p">]]];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Since the recognizer does not continuously calculate possible gestures, you need to call <code>recognize</code> at some point:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">dollarPGestureRecognizer</span> <span class="n">recognize</span><span class="p">];</span>
+</pre></div>
+
+<p>(Depending on your needs, you could also extend <code>DollarPGestureRecognizer</code> to perform the recognition in the <code>touchesEnded</code> delegate method.)</p>
+
+<h3>Adding your own templates:</h3>
+
+<p><code>See CustomizeViewController.m</code>. You can either add preprocessed templates (<code>DollarPointCloud</code>) or add new templates on the fly.
+To add all current points as a gesture:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">gestureRecognizer</span> <span class="nl">addGestureWithName:</span><span class="n">name</span><span class="p">];</span>
+</pre></div>
+
+<p><code>DollarDefaultGestures.m</code> shows you how to add a new preprocessed template:</p>
+
+<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">points</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span>
+    <span class="p">[[</span><span class="n">DollarPoint</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithId:</span><span class="err">@</span><span class="mi">1</span> <span class="nl">x:</span><span class="mi">0</span> <span class="nl">y:</span><span class="mi">100</span><span class="p">],</span>
+    <span class="p">[[</span><span class="n">DollarPoint</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithId:</span><span class="err">@</span><span class="mi">1</span> <span class="nl">x:</span><span class="mi">50</span> <span class="nl">y:</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[[</span><span class="n">DollarPoint</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithId:</span><span class="err">@</span><span class="mi">2</span> <span class="nl">x:</span><span class="mi">50</span> <span class="nl">y:</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[[</span><span class="n">DollarPoint</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithId:</span><span class="err">@</span><span class="mi">2</span> <span class="nl">x:</span><span class="mi">100</span> <span class="nl">y:</span><span class="mi">100</span><span class="p">]</span>
+<span class="p">];</span>
+<span class="n">DollarPointCloud</span> <span class="o">*</span><span class="n">pointCloud</span> <span class="o">=</span> <span class="p">[[</span><span class="n">DollarPointCloud</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithName:</span><span class="s">@"Roof"</span> <span class="nl">points:</span><span class="n">points</span><span class="p">];</span>
+<span class="p">[[</span><span class="n">dollarPGestureRecognizer</span> <span class="n">pointClouds</span><span class="p">]</span> <span class="nl">addObject:</span><span class="n">pointCloud</span><span class="p">];</span>
+</pre></div>
+
+<p>This would add a new gesture called "Roof" with two different strokes consisting of two points each as a new preprocessed template.</p>
+
+<h3>Using DollarP directly:</h3>
+
+<p><code>DollarPGestureReconizer</code> is just a "facade" for <code>DollarP</code>, integrated into iOS gesture recognizers. 
+However, you could also use <code>DollarP</code> directly and write your own recognizer on top of it using the methods <code>addGesture</code>, <code>recognize</code> and the property <code>pointClouds</code> from <code>DollarP.h</code>.</p>
+
+<h2>Notes (Demo App):</h2>
 
 <ul>
-<li>You need to add additional templates to improve gesture scores (Customize/Add to existing type...)</li>
+<li>You need to add additional templates to improve gesture scores (<code>Customize/Add to existing type</code>).</li>
 <li>Custom templates are not persisted between launches!</li>
+<li>Template images on the start screen are displayed from a static image of the $P website and not generated dynamically.</li>
 </ul>
       </section>
       <footer>
