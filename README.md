@@ -1,3 +1,6 @@
+# Note:
+Check out my project [PennyPincher](https://github.com/fe9lix/PennyPincher) if you're looking for a modern and faster gesture recognizer written in Swift.
+
 # $P Point-Cloud Recognizer for Objective-C
 
 An Objective-C port of the $P gesture recognizer to be used in iOS applications.
