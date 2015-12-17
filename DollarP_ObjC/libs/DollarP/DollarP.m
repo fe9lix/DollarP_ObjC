@@ -108,7 +108,7 @@ int const DollarPNumPoints = 32;
             matched[index] = @YES;
         }
         
-		float weight = 1 - ((i - start + numPoints1) % numPoints1) / numPoints1;
+		float weight = 1.0f - (float)((i - start + numPoints1) % numPoints1) / numPoints1;
 		sum += weight * min;
 		i = (i + 1) % numPoints1;
         
