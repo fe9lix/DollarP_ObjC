@@ -53,7 +53,7 @@ Since the recognizer does not continuously calculate possible gestures, you need
 
 (Depending on your needs, you could also extend `DollarPGestureRecognizer` to perform the recognition in the `touchesEnded` delegate method.)
 
-###Adding your own templates:
+### Adding your own templates:
 
 `See CustomizeViewController.m`. You can either add preprocessed templates (`DollarPointCloud`) or add new templates on the fly.
 To add all current points as a gesture:
@@ -74,7 +74,7 @@ DollarPointCloud *pointCloud = [[DollarPointCloud alloc] initWithName:@"Roof" po
 ```
 This would add a new gesture called "Roof" with two different strokes consisting of two points each as a new preprocessed template.
 
-###Using DollarP directly:
+### Using DollarP directly:
 `DollarPGestureReconizer` is just a "facade" for `DollarP`, integrated into iOS gesture recognizers. 
 However, you could also use `DollarP` directly and write your own recognizer on top of it using the methods `addGesture`, `recognize` and the property `pointClouds` from `DollarP.h`.
 
